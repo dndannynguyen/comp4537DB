@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+}
+
+#insert_container {
+    padding: 10px 20px;
+    margin-bottom: 100px;
+    font-family: sans-serif;
+}
+
+#query_container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    font-family: sans-serif;
+}
+
+#query_container > textarea {
+    height: 200px;
+    width: 500px;
+    border-radius: 5px;
+    border: 1px black solid;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+#query_container > button {
+    height: 20px;
+    width: 60px;
+}
