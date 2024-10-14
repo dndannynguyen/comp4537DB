@@ -1,6 +1,7 @@
 const http = require('http');
 const mysql = require('mysql2');
 require('dotenv').config(); // Load environment variables
+const fs = require('fs'); // Include the fs module
 
 // Create a connection to the MySQL database
 const connection = mysql.createConnection({
@@ -8,6 +9,11 @@ const connection = mysql.createConnection({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
+    port: process.env.DB_PORT,
+    ssl: {
+        ca: fs.readFileSync('../cert//DigiCertGlobalRootCA.crt.pem'),
+        rejectUnauthorized: false,
+    }
 });
 
 // Connect to the database
