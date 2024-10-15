@@ -11,7 +11,7 @@ const connection = mysql.createConnection({
     database: process.env.DB_NAME,
     port: process.env.DB_PORT,
     ssl: {
-        ca: fs.readFileSync('../cert//DigiCertGlobalRootCA.crt.pem'),
+        ca: fs.readFileSync('./cert//DigiCertGlobalRootCA.crt.pem'),
         rejectUnauthorized: false,
     }
 });
