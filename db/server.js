@@ -27,6 +27,9 @@ connection.connect((err) => {
 
 // Create the server
 const server = http.createServer((req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Allow any origin
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     if (req.method === 'POST' && req.url === '/insert') {
         let body = '';
 
